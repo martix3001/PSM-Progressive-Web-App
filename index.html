@@ -27,9 +27,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
-            flex:auto;
-            align-items: center;
-            justify-items: center;
         }
         #mapa, #sos {
             display: none;
@@ -38,7 +35,6 @@
             height: 400px;
             width: 100%;
             margin-top: 20px;
-            display: none;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
@@ -60,7 +56,7 @@
 <body>
     <div class="container text-center mt-5">
         <h1>PSM PWA</h1>
-        <p>Autorzy: Kacper Satora, Marta Styczeń, Mikołaj Suchan</p>
+        <p>Autorzy: </p>
         <div class="mt-4">
             <a href="#" id="mapLink" class="btn btn-primary">Mapa</a>
             <a href="#" id="sosLink" class="btn btn-danger">SOS</a>
@@ -80,10 +76,7 @@
         <button id="sosButton" class="btn btn-danger" onclick="vibrate()">Wysyłaj SOS</button>
     </div>
 
-    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-
-    <div id = "sample" style = "width:900px; height:580px;"></div>
-
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         document.getElementById("mapLink").addEventListener("click", function (event) {
             event.preventDefault();
@@ -105,7 +98,7 @@
 
                     document.getElementById("map").style.display = "block";
 
-
+                    // Aktualizowanie pozycji i centrowanie mapy na nowej lokalizacji
                     function updatePosition() {
                         navigator.geolocation.getCurrentPosition(function (position) {
                             var lat = position.coords.latitude;
@@ -114,6 +107,10 @@
                             marker.setLatLng([lat, lon]);
                         });
                     }
+
+                    // Odświeżaj pozycję co 10 sekund
+                    setInterval(updatePosition, 10000);
+
                 }, function (error) {
                     alert("Nie można uzyskać lokalizacji. Sprawdź ustawienia przeglądarki.");
                 });
