@@ -4,8 +4,8 @@
     "description": "Prosta aplikacja PWA z mapą i funkcją SOS",
     "icons": [
       {
-        "src": "icons/mapa.png",
-        "type": "image/png",
+        "src": "icons/mapa.jpg",
+        "type": "image",
         "sizes": "192x192"
       }
     ],

@@ -1,8 +1,6 @@
 const CACHE_NAME = "pwa-cache-v1";
 const urlsToCache = [
     "index.html",
-    "mapa.html",
-    "sos.html",
     "manifest.json",
     "icons/icon-192.png",
     "icons/icon-512.png",
