@@ -25,9 +25,9 @@ export default function ReadItems() {
 
   return (
     <div>
-      <div className="flex flex-col md:flex-row gap-4 shadow-sm">
+      <div className="flex flex-col items-center md:flex-row md:justify-evenly gap-4">
         {items.map((item) => (
-          <div key={item.id} className="bg-white shadow-md rounded-lg p-4">
+          <div key={item.id} className="bg-white shadow-md rounded-lg p-4 w-48">
             <h3 className="text-xl font-semibold">
               {/* name and Name bc it was typed wrong in firebase xD */}
               {item.name ? item.name : item.Name}
