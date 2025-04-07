@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Receipt</title>
+</head>
+<body>
+  <div id="app">
+    <pre>
+RECEIPT
+-----------------
+Product: {{ product }}
+Unit Price: {{ unitPrice }} zł
+Quantity: {{ quantity }}
+Amount: {{ amount }} zł
+VAT Tax Rate: {{ vatRate }}%
+=================
+Total: {{ total.toFixed(2) }} zł
+    </pre>
+  </div>
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          product: "book",
+          unitPrice: 17,
+          quantity: 3,
+          vatRate: 23
+        }
+      },
+      computed: {
+        amount() {
+          return this.unitPrice * this.quantity;
+        },
+        total() {
+          return this.amount * (1 + this.vatRate / 100);
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

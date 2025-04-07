@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Company Card</title>
+</head>
+<body>
+  <div id="app">
+    <p><strong>{{ name.toUpperCase() }}</strong></p>
+    <p>ul. {{ street }}</p>
+    <p>{{ postalCode }} {{ city }}</p>
+    <p>tel. {{ phone1 }}, {{ phone2 }}</p>
+    <p><a :href="website" target="_blank">{{ website }}</a></p>
+  </div>
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          name: "Unikpol S.A.",
+          street: "Ukryta 5",
+          postalCode: "02-114",
+          city: "Rawa Mazowiecka",
+          phone1: "22 345 90 21",
+          phone2: "888 213 992",
+          website: "http://www.unikpol.pl"
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator</title>
+</head>
+<body>
+  <div id="app">
+    <h2>Kalkulator BMI</h2>
+    <label>
+      Wzrost (cm):
+      <input type="number" v-model.number="height">
+    </label>
+    <br>
+    <label>
+      Masa ciała (kg):
+      <input type="number" v-model.number="weight">
+    </label>
+    <br><br>
+    <p>BMI: <strong>{{ bmi }}</strong></p>
+  </div>
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          height: 0,
+          weight: 0
+        };
+      },
+      computed: {
+        bmi() {
+          if (this.height > 0 && this.weight > 0) {
+            const heightInMeters = this.height / 100;
+            return (this.weight / (heightInMeters ** 2)).toFixed(2);
+          }
+          return "Brak danych";
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
