@@ -3,6 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Product Receipt</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background-color: #f3f4f6;
+      color: #333;
+      padding: 20px;
+    }
+    pre {
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-size: 1.1em;
+    }
+    strong {
+      color: #d32f2f;
+    }
+    .btn-back {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  .btn-back:hover {
+    background-color: #0056b3;
+  }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -40,5 +71,9 @@ Total: {{ total.toFixed(2) }} zł
       }
     }).mount('#app');
   </script>
+  <p>
+    <button onclick="location.href='index.html'" class="btn-back">← Powrót na stronę główną</button>
+  </p>
+
 </body>
 </html>

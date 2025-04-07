@@ -3,6 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <title>Book Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+    h2 {
+      color: #4CAF50;
+    }
+    form {
+      background: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .btn-back {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  .btn-back:hover {
+    background-color: #0056b3;
+  }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -39,5 +90,9 @@
       }
     }).mount('#app');
   </script>
+  <p>
+    <button onclick="location.href='index.html'" class="btn-back">← Powrót na stronę główną</button>
+  </p>
+
 </body>
 </html>
