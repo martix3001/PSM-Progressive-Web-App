@@ -8,7 +8,6 @@
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
       color: #333;
-      display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -55,7 +54,7 @@
   <div id="app">
     <p><strong>{{ name.toUpperCase() }}</strong></p>
     <p>ul. {{ street }}</p>
-    <p>{{ postalCode }} {{ city }}</p>
+    <p>{{ code }} {{ city }}</p>
     <p>tel. {{ phone1 }}</p>
     <p><a :href="website" target="_blank">{{ website }}</a></p>
   </div>
@@ -67,7 +66,7 @@
         return {
           name: "UEK Kraków",
           street: "Rakowicka 27",
-          postalCode: "31-510",
+          code: "31-510",
           city: "Kraków",
           phone1: "12 293 57 00",
           website: "https://uek.krakow.pl/"
